@@ -1,1 +1,2 @@
-       console.log("Hello, World!")
+       // Сделал задание О коде
+       console.log("2102005")
