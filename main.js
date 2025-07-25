@@ -1,34 +1,19 @@
-// Исходные данные (как и прежде)
-const width = 4.5;
-const length = 6.67;
-const pricePerSquareMeter = 350;
+// 1. Генерируем количество классов (от 1 до 20)
+const numberOfClasses = Math.floor(Math.random() * 20) + 1;
 
-// 1. Вычисляем площадь, занимаемую вещами
-const area = width * length;
+// 2. Генерируем количество учеников в классе (от 1 до 35)
+const numberOfStudentsPerClass = Math.floor(Math.random() * 35) + 1;
 
-// 2. Определяем, сколько квадратных метров нужно оплатить (округляем в большую сторону)
-const payableArea = Math.ceil(area);
+// 3. Вычисляем общее количество учеников в школе
+const totalNumberOfStudents = numberOfClasses * numberOfStudentsPerClass;
 
-// 3. Вычисляем общую сумму к оплате
-const totalPrice = payableArea * pricePerSquareMeter;
+// 4. Вычисляем необходимое количество парт
+//    Если количество учеников нечетное, округляем вверх до ближайшего целого числа
+const numberOfDesks = Math.ceil(totalNumberOfStudents / 2);
 
-// 4. Рассчитываем количество сторублёвых купюр
-const hundreds = Math.floor(totalPrice / 100);
-
-// 5. Рассчитываем количество пятидесятирублёвых купюр
-const remainingAmount = totalPrice % 100;
-const fifties = Math.floor(remainingAmount / 50);
-
-// Выводим результаты в консоль, используя шаблонные строки
-console.log(`Ширина: ${width} м`);
-console.log(`Длина: ${length} м`);
-console.log(`Площадь: ${area} м^2`);
-console.log("---------");
-console.log(`Нужно оплатить: ${payableArea} м^2`);
-console.log(`Цена 1 м^2: ${pricePerSquareMeter} руб`);
-console.log(`Сумма за ${payableArea} м^2: ${totalPrice} руб`);
-console.log("---------");
-console.log(`Нужно дать сторублёвых купюр: ${hundreds}`);
-console.log(`Нужно дать пятидесятирублёвых купюр: ${fifties}`);
+// 5. Выводим результаты в консоль
+console.log(`Классов: ${numberOfClasses}`);
+console.log(`Учеников: ${numberOfStudentsPerClass}`);
+console.log(`Нужно купить парт: ${numberOfDesks}`);
 
 
