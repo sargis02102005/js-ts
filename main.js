@@ -1,16 +1,34 @@
-// 1. Генерируем радиус круга (целое число от 1 до 20)
-const radius = Math.floor(Math.random() * 20) + 1;
+// Исходные данные (как и прежде)
+const width = 4.5;
+const length = 6.67;
+const pricePerSquareMeter = 350;
 
-// 2. Вычисляем площадь круга
-const area = Math.PI * radius * radius;
+// 1. Вычисляем площадь, занимаемую вещами
+const area = width * length;
 
-// 3. Округляем площадь до 2 знаков после запятой
-const roundedArea = area.toFixed(2); // toFixed() возвращает строку!
+// 2. Определяем, сколько квадратных метров нужно оплатить (округляем в большую сторону)
+const payableArea = Math.ceil(area);
 
-// 4. Формируем сообщение
-const message = `Радиус: ${radius}\nПлощадь: ${roundedArea}`;
+// 3. Вычисляем общую сумму к оплате
+const totalPrice = payableArea * pricePerSquareMeter;
 
-// 5. Выводим сообщение
-console.log(message);
+// 4. Рассчитываем количество сторублёвых купюр
+const hundreds = Math.floor(totalPrice / 100);
+
+// 5. Рассчитываем количество пятидесятирублёвых купюр
+const remainingAmount = totalPrice % 100;
+const fifties = Math.floor(remainingAmount / 50);
+
+// Выводим результаты в консоль, используя шаблонные строки
+console.log(`Ширина: ${width} м`);
+console.log(`Длина: ${length} м`);
+console.log(`Площадь: ${area} м^2`);
+console.log("---------");
+console.log(`Нужно оплатить: ${payableArea} м^2`);
+console.log(`Цена 1 м^2: ${pricePerSquareMeter} руб`);
+console.log(`Сумма за ${payableArea} м^2: ${totalPrice} руб`);
+console.log("---------");
+console.log(`Нужно дать сторублёвых купюр: ${hundreds}`);
+console.log(`Нужно дать пятидесятирублёвых купюр: ${fifties}`);
 
 
