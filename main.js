@@ -1,3 +1,7 @@
-const text = 'this_is_an_example_string';
-// Разделитель
-console.log(text.split('_'))
+const name = 'Ruslan'
+
+const registration = `Добро пожаловать, ${name}, благодарим за регистрацию!\n`+
+'Надеемся, Вам понравится'
+console.log(registration)
+
+
