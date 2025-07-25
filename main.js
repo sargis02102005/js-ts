@@ -1,7 +1,5 @@
-const name = 'Ruslan'
-
-const registration = `Добро пожаловать, ${name}, благодарим за регистрацию!\n`+
-'Надеемся, Вам понравится'
-console.log(registration)
+const name = 'Ruslan';
+const message = `Привет, ${name}! Рад видеть тебя.`;
+console.log(message); // Выведет: Привет, Ruslan! Рад видеть тебя.
 
 
