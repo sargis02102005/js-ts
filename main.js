@@ -1,5 +1,6 @@
-const name = 'Ruslan';
-const message = `Привет, ${name}! Рад видеть тебя.`;
-console.log(message); // Выведет: Привет, Ruslan! Рад видеть тебя.
+let a = 4;
+let area = a * a; //
+console.log("Площадь квадрата со стороной a=" + a + " равна " + area); // Вывод: Площадь квадрата со стороной a=4 равна 16
+
 
 
