@@ -1,19 +1,26 @@
-// 1. Генерируем количество классов (от 1 до 20)
-const numberOfClasses = Math.floor(Math.random() * 20) + 1;
+let a = 10;
 
-// 2. Генерируем количество учеников в классе (от 1 до 35)
-const numberOfStudentsPerClass = Math.floor(Math.random() * 35) + 1;
+console.log(1 > 0);//true
+console.log(!(1 < 0));//true
 
-// 3. Вычисляем общее количество учеников в школе
-const totalNumberOfStudents = numberOfClasses * numberOfStudentsPerClass;
+console.log('a' == a);//false
+console.log('a' !== a);//true
 
-// 4. Вычисляем необходимое количество парт
-//    Если количество учеников нечетное, округляем вверх до ближайшего целого числа
-const numberOfDesks = Math.ceil(totalNumberOfStudents / 2);
+a = 4;
 
-// 5. Выводим результаты в консоль
-console.log(`Классов: ${numberOfClasses}`);
-console.log(`Учеников: ${numberOfStudentsPerClass}`);
-console.log(`Нужно купить парт: ${numberOfDesks}`);
+console.log(a == 10);//false
+console.log(a == '10');//false
 
+console.log(a >= 4);//true
+console.log('4' == a);//true
 
+console.log(!(1 === '1'));//true
+
+console.log(!!true);//true
+console.log(!!!('0' == 0));//false
+console.log(false == !false);//false
+
+console.log(1 != '1');//false
+console.log(1 !== '1');//true
+
+console.log(1 != '0');//true
