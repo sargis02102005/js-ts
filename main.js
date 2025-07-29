@@ -1,12 +1,23 @@
-const FizzBuzz = 1 + Math.round(Math.random() * 20)
+const year = (198 + Math.round(Math.random() * 14)) * 10  //
+const a = 4
+const b = 100
+const c = 400
 
-if (FizzBuzz % 3 === 0){
-    console.log('Fizz')
-}else if (FizzBuzz % 5 === 0){
-    console.log('Buzz')
-}else if (FizzBuzz % 3 === 0 && FizzBuzz % 5 === 0) {
-    console.log('FizzBuzz')
-}
+// if (year % 4 === 0 && year % 100 !== 0){
+//     console.log(`${year}:Делится на ${a}, не делится на ${b}. Високосный`)
+// }
+// if (year % 4 === 0 && year % 100 === 0 && year % 400 !== 0){
+//     console.log(`${year}:Делится на ${a}, делится на ${b}, не делится на ${c}. Не високосный`)
+// }
+// if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0){
+//     console.log(`${year}:Делится на ${a}, делится на ${b}, делится на ${c}. Високосный`)
+// }
+// if (year % 4 !== 0 ){
+//     console.log(`${year}:Не делится на ${a}. Не високосный`)
+// }
 
 
-
+console.log(year % 4 === 0 && year % 100 !== 0 ? `${year}:Делится на ${a}, не делится на ${b}. Високосный`: 'Не високосный' )
+console.log(year % 4 === 0 && year % 100 === 0 && year % 400 !== 0 ? `${year}:Делится на ${a}, делится на ${b}, не делится на ${c}. Не високосный`: 'Високосный' )
+console.log(year % 4 === 0 && year % 100 === 0 && year % 400 === 0 ? `${year}:Делится на ${a}, делится на ${b}, делится на ${c}. Високосный`: 'Не високосный')
+console.log(year % 4 !== 0 ? `${year}:Не делится на ${a}. Не високосный`: 'Високосный')
