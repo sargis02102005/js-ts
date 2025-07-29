@@ -16,14 +16,14 @@ if (fullname.length > threshold) {
         console.log(`Буква "${letter1}" найдена`);
     } else {
         console.log(`Буква "${letter1}" не найдена`);
-    }//Буква M найдена
+    }//Буква M не найдена
 
     const letter2 = 'R';
-    if (fullname.toUpperCase().include(letter2)) {
+    if (fullname.toUpperCase().includes(letter2)) {
         console.log(`Буква "${letter2}" найдена`, newLine);
     } else {
         console.log(`Буква "${letter2}" не найдена`);
-    }// Буква R не найдена
+    }// Буква R  найдена
 
     fullname = '              ';
 
@@ -57,5 +57,5 @@ const count = 3 + Math.round(Math.random() * 3);
 
 const prettified = `${star.repeat(count)}-${surname}-${star.repeat(count)}`;
 
-console.log(prettified);// 3 4 5 6-3 4 5 6
-console.log(prettified.replaceAll(star, underscore));// 3 4 5 6-3 4 5 6 _
+console.log(prettified);//*****-Себастьянов-*****
+console.log(prettified.replaceAll(star, underscore));//_____-Себастьянов-_____
