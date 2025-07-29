@@ -1,16 +1,17 @@
+
 const a = 10;
 
 if (a === 2 || 3) {
     console.log(-1);
- }// -1
+ }// Результат проверки -1
 
 if (a === 2 || a === 3) {
     console.log(0);
-} // false
+} // Результат проверки ничего
 
 if (10 % 1) {
     console.log(1);
-}// 1
+}// Результат проверки ничего
 
 if (10 % 0) {
     console.log(2);
@@ -18,7 +19,7 @@ if (10 % 0) {
     console.log(3);
 } else if (true) {
     console.log(4);
-}// 4
+}// Результат проверки 3
 
 let g = '';
 
@@ -26,11 +27,11 @@ if (g) {
     console.log(5);
 } else {
     console.log(6);
-}// 6
+}// Результат проверки 6
 
 if (undefined) {
     console.log(7);
-} // false
+} // Результат проверки ничего
 
 if ('0') {
     console.log(8);
@@ -38,17 +39,17 @@ if ('0') {
     console.log(9);
 } else {
     console.log('a');
-}// 8
+}// Результат проверки 8
 
 if (!'0') {
     console.log('b');
 } else {
     console.log('c');
-}// c
+}// Результат проверки c
 
 if (!!'' || !!0 || !!1) {
     console.log('d');
-}// d
+}// Результат проверки d
 
 if (undefined || false || '' || 0) {
     console.log('e');
@@ -56,21 +57,22 @@ if (undefined || false || '' || 0) {
     console.log('f');
 } else {
     console.log('g');
-}// f
+}// Результат проверки f
 
 const a = 0;
 const b = 1;
 let c;
 
-console.log(a == '0' ? 'h' : 'i');// h
-console.log(!(a > b) ? 'j' : 'k');// j
-console.log(0 ? 'l' : 'm');// m
-console.log(!0 ? 'n' : 'o');// n
-console.log((null === undefined || 11 % 5) && (a > b || !!true) ? 'n' : 'o');// n
+console.log(a == '0' ? 'h' : 'i');// Результат проверки h
+console.log(!(a > b) ? 'j' : 'k');// Результат проверки j
+console.log(0 ? 'l' : 'm');// Результат проверки m
+console.log(!0 ? 'n' : 'o');// Результат проверки n
+console.log((null === undefined || 11 % 5) && (a > b || !!true) ? 'n' : 'o');// Результат проверки n
 
-console.log('abc' == 'ABC' ? 'p' : 'q');// q
-console.log('false' ? 'r' : 's');// r
-console.log('false' == false ? 't' : 'u');// u
-console.log(Number('one') ? 'v' : 'w');// w
-console.log(c ? 'x' : 'y');// y
-console.log(null == undefined ? 'z' : '🫡');// z
+console.log('abc' == 'ABC' ? 'p' : 'q');// Результат проверки q
+console.log('false' ? 'r' : 's');// Результат проверки r
+console.log('false' == false ? 't' : 'u');// Результат проверки u
+console.log(Number('one') ? 'v' : 'w');// Результат проверки w
+console.log(c ? 'x' : 'y');// Результат проверки y
+console.log(null == undefined ? 'z' : '🫡');// Результат проверки ничего
+
