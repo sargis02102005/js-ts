@@ -1,23 +1,29 @@
-const year = (198 + Math.round(Math.random() * 14)) * 10  //
-const a = 4
-const b = 100
-const c = 400
+function getAccessLevel(role) {
+    let accessLevel;
 
-// if (year % 4 === 0 && year % 100 !== 0){
-//     console.log(`${year}:Делится на ${a}, не делится на ${b}. Високосный`)
-// }
-// if (year % 4 === 0 && year % 100 === 0 && year % 400 !== 0){
-//     console.log(`${year}:Делится на ${a}, делится на ${b}, не делится на ${c}. Не високосный`)
-// }
-// if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0){
-//     console.log(`${year}:Делится на ${a}, делится на ${b}, делится на ${c}. Високосный`)
-// }
-// if (year % 4 !== 0 ){
-//     console.log(`${year}:Не делится на ${a}. Не високосный`)
-// }
+    switch (role.toLowerCase()) {
+        case 'user':
+        case 'client':
+            accessLevel = 1;
+            break;
+        case 'admin':
+        case 'manager':
+            accessLevel = 2;
+            break;
+        case 'superadmin':
+            accessLevel = 3;
+            break;
+        default:
+            accessLevel = 'неизвестный уровень доступа';
+    }
+
+    return accessLevel;
+}
 
 
-console.log(year % 4 === 0 && year % 100 !== 0 ? `${year}:Делится на ${a}, не делится на ${b}. Високосный`: 'Не високосный' )
-console.log(year % 4 === 0 && year % 100 === 0 && year % 400 !== 0 ? `${year}:Делится на ${a}, делится на ${b}, не делится на ${c}. Не високосный`: 'Високосный' )
-console.log(year % 4 === 0 && year % 100 === 0 && year % 400 === 0 ? `${year}:Делится на ${a}, делится на ${b}, делится на ${c}. Високосный`: 'Не високосный')
-console.log(year % 4 !== 0 ? `${year}:Не делится на ${a}. Не високосный`: 'Високосный')
+console.log(getAccessLevel('user'));      // 1
+console.log(getAccessLevel('Client'));    // 1
+console.log(getAccessLevel('admin'));     // 2
+console.log(getAccessLevel('MANAGER'));   // 2
+console.log(getAccessLevel('superadmin'));// 3
+console.log(getAccessLevel('guest'));     // неизвестный уровень доступа
