@@ -1,29 +1,34 @@
-function getAccessLevel(role) {
-    let accessLevel;
+function showSpongeBobFace(character) {
+    let face;
 
-    switch (role.toLowerCase()) {
-        case 'user':
-        case 'client':
-            accessLevel = 1;
+    switch(character.toLowerCase()) {
+        case "spongebob":
+            face = "| ( · )( · ) |";
             break;
-        case 'admin':
-        case 'manager':
-            accessLevel = 2;
+        case "patrick":
+            face = "/ ( · )( · ) \\";
             break;
-        case 'superadmin':
-            accessLevel = 3;
+        case "squidward":
+            face = "( ( · )( · ) )";
+            break;
+        case "plankton":
+            face = "| ( · ) |";
+            break;
+        case "mr. crabs":
+            face = "|·||·|";
             break;
         default:
-            accessLevel = 'неизвестный уровень доступа';
+            face = "Персонаж не найден!";
     }
 
-    return accessLevel;
+    console.log(face);
 }
 
+// Примеры использования:
+console.log(showSpongeBobFace("SpongeBob"))// | ( · )( · ) |
+console.log(showSpongeBobFace("Patrick")) // / ( · )( · ) \
+console.log(showSpongeBobFace("Squidward"))// ( ( · )( · ) )
+console.log(showSpongeBobFace("Plankton"))// | ( · ) |
+console.log(showSpongeBobFace("Mr. Crabs")) // |·||·|
 
-console.log(getAccessLevel('user'));      // 1
-console.log(getAccessLevel('Client'));    // 1
-console.log(getAccessLevel('admin'));     // 2
-console.log(getAccessLevel('MANAGER'));   // 2
-console.log(getAccessLevel('superadmin'));// 3
-console.log(getAccessLevel('guest'));     // неизвестный уровень доступа
+
