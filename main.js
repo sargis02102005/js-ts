@@ -1,33 +1,30 @@
-const list = [
-    'Молоко',
-    'Хлеб',
-    'Картошка',
-    'Капустка',
-    'Сок',
-];
+const cheque = {
+    drinks: ['Молочный коктейль']
+}
 
-list.push('Ветчина')// ['Молоко', 'Хлеб', 'Картошка', 'Капустка', 'Сок', 'Ветчина']
-list.push('Помидоры')// ['Молоко', 'Хлеб', 'Картошка', 'Капустка', 'Сок', 'Ветчина', 'Помидоры']
-list.push('Огурцы')// ['Молоко', 'Хлеб', 'Картошка', 'Капустка', 'Сок', 'Ветчина', 'Помидоры', 'Огурцы']
+const divider = '----------'
 
-list.pop();// Удаляем 'Огурцы' → последний элемент теперь 'Помидоры'
-//Проверяем, есть ли в массиве list строка 'ветчина':
-//
-// list содержит 'Ветчина' (с большой буквы), но не 'ветчина' (регистр важен).
-let res = 'ве'
-let a = 'тч'
-res += a;
-a = 'ина';
-res += a;
+// Обработка основных блюд
+if ('food' in cheque) {
+    if (cheque.food.includes('Бургер') && !('snacks' in cheque && cheque.snacks.includes('Картошка фри'))) {
+        cheque.snacks ? cheque.snacks.push('Картошка фри') : cheque.snacks = ['Картошка фри']
+    }
+    if (cheque.food.includes('Сырный суп') && !('snacks' in cheque && cheque.snacks.includes('Хлеб'))) {
+        cheque.snacks ? cheque.snacks.push('Хлеб') : cheque.snacks = ['Хлеб']
+    }
 
-console.log(list.includes(res));//Вывод:false
+    console.log(`${divider}\nОсновные блюда (${cheque.food.length}):\n${cheque.food.join(', ')}`)
+}
 
-res = ''.repeat(res.length);
-a = 'ок'
-res += a;
-a = ['с']
-res = a[0] + res;
-// indexOf учитывает регистр, поэтому 'сок' не найден
-console.log(list.indexOf(res));//Вывод: -1 (не найдено)
-//                                       7 * 3=21
-console.log( list[list.length - 1].length * 3 );//Вывод: 21
+// Обработка закусок
+if ('snacks' in cheque) {
+    console.log(`${divider}\nЗакуски (${cheque.snacks.length}):\n${cheque.snacks.join(', ')}`)
+}
+
+// Обработка напитков
+if ('drinks' in cheque) {
+    console.log(`${divider}\nНапитки (${cheque.drinks.length}):\n${cheque.drinks.join(', ')}`)
+    if (cheque.drinks.includes('Пиво')) console.log('‼️ Внимание: Есть алкоголь!')
+}
+
+console.log(divider)
