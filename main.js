@@ -1,3 +1,11 @@
-const array = [1, 33, -10, 'example', 'word'];
+const user = {
+    name: 'Alex',
+    nickname: 'Alexxx675',
+    nicknameHistory: ['AlexLuk', 'Xela-123', 'Sasha 8'],
+};
+// Добавляем текущий никнейм в историю
+user.nicknameHistory.push(user.nickname);
+// Новый никнейм
+user.nickname = 'Sanya';
 
-console.log(array.join('_'))
+console.log(user)
