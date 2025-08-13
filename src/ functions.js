@@ -1,12 +1,23 @@
-const setNickname = (user, newNickname) => {
-  // Добавляем текущий никнейм в историю, если он существует
-  if (user.nickname) {
-    user.nicknameHistory = user.nicknameHistory || [];
-    user.nicknameHistory.push(user.nickname);
-  }
+import chalk from 'chalk';
 
-  // Устанавливаем новый никнейм
-  user.nickname = newNickname;
+// 1. Функция sayHi с chalk
+const sayHi = (name) => {
+  console.log(chalk.green('Привет,') + ' ' + chalk.blue(name));
 };
 
-export { setNickname };
+// 2. Функция sayText с chalk
+const sayText = (text) => {
+  console.log(chalk.bgBlack.white(text));
+};
+
+// 3. Функция square
+const square = (num) => num * num;
+
+// 4. Функция sum
+const sum = (a, b) => a + b;
+
+// 5. Функция power
+const power = (a, b) => a ** b;
+
+// Экспорт функций
+export { sayHi, sayText, square, sum, power };

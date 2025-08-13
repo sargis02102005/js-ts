@@ -1,16 +1,14 @@
-import { setNickname } from './ functions.js';
+import { sayHi, sayText, square, sum, power } from './ functions.js';
 
-const user = { id: 8, nickname: 'Саня Санёчек', nicknameHistory: [] };
-setNickname(user, 'Александр Сильвестрович');
-console.log(user);
-// { id: 8, nickname: 'Александр Сильвестрович', nicknameHistory: ['Саня Санёчек'] }
+// Тестирование sayHi
+sayHi('Анатолий'); // Зелёное "Привет," и синее имя
+sayHi('Мария'); // Аналогично для другого имени
 
-setNickname(user, 'Саша');
-console.log(user);
-// { id: 8, nickname: 'Саша', nicknameHistory: ['Саня Санёчек', 'Александр Сильвестрович'] }
+// Тестирование sayText
+sayText('Важное сообщение'); // Белый текст на чёрном фоне
+sayText('Ещё один пример');
 
-// Тест 2
-const max = { id: 3, nickname: 'Franz Hermann', nicknameHistory: ['max', 'maxxx'] };
-setNickname(max, 'Франц Герман');
-console.log(max);
-// { id: 3, nickname: 'Франц Герман', nicknameHistory: ['max', 'maxxx', 'Franz Hermann'] }
+// Тестирование математических функций
+console.log('5² =', square(5));
+console.log('2 + 3 =', sum(2, 3));
+console.log('2^10 =', power(2, 10));
