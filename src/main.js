@@ -1,6 +1,8 @@
-import { generateInteger } from './ functions.js';
+import { generateInteger, isAdult } from './ functions.js';
+// Случайный возраст от 15 до 22
+const age = generateInteger(15, 23); // 23, потому что max не включительно
 
-// Проверка generateInteger
-console.log(generateInteger(1, 10)); // Случайное число от 1 до 9
-console.log(generateInteger(5, 20)); // Случайное число от 5 до 19
-console.log(generateInteger(-3, 3)); // Случайное число от -3 до 2
+console.log(isAdult(age));
+// Примеры вручную
+console.log(isAdult(17));
+console.log(isAdult(18));
