@@ -1,11 +1,8 @@
-//Первый и последний символ строки
-import { func } from './strings.js';
-console.log(func('МОЛОКО')); // МолокО
-console.log(func('картошка')); // КартошкА
-console.log(func('СтРаНнОе СлОвО')); // Странное словО
-//Проварка на любые другие слова и предложение
-console.log(func('глпрждфпровщпрщпрОЛШОтодапркар')); // ГлпрждфпровщпрщпролшотодапркаР
-console.log(func('прИвЕт')); // ПривеТ
-console.log(func('Сегодня Я иду В театр')); // Сегодня я иду в театР
-console.log(func('ПожалУйста, закрой ОКНо')); //Пожалуйста, закрой окнО
-console.log(func('все работает как задумано')); // Все работает как задуманО
+import { isStringStartsWith } from './strings.js';
+
+console.log(isStringStartsWith('Ветеринар', 'вет')); // true
+console.log(isStringStartsWith('Молоко', 'мол')); // true
+console.log(isStringStartsWith('Карго Корги', 'КАРГО ')); // true
+
+console.log(isStringStartsWith('Карго Корги', 'кор ')); // false
+console.log(isStringStartsWith('Ковёр', 'кова ')); // false
