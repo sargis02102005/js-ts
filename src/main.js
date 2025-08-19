@@ -1,3 +1,5 @@
 import { generateInteger } from './numbers.js';
-//Тестирование
-console.log(generateInteger(1, 10));
+import { squareS } from './numbers.js';
+const randomA = generateInteger(1, 10);
+const area = squareS(randomA);
+console.log(`Площадь квадрата со стороной a=${randomA} равна ${area}`);
