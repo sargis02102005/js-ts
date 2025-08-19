@@ -8,7 +8,8 @@ export const generateInteger = (min, max) => {
   const generateInteger = Math.floor(Math.random() * (max - min + 1)) + min;
   return generateInteger;
 };
-// Функция для вычисления площади квадрата
-export const squareS = (a) => {
-  return a ** 2;
+export const circle = (radius) => {
+  const PI = Math.PI;
+  const area = PI * radius ** 2;
+  return Math.round(area * 100) / 100; // Округление до 2х знаков
 };
