@@ -1,10 +1,7 @@
-import { generateInteger } from './numbers.js';
-import { circle } from './numbers.js';
-const random = generateInteger(3, 12); // от 3 до 12 включительно
+import { isEven } from './numbers.js';
 
-// Вычисляем площадь
-const area = circle(random);
-
-// Выводим результат
-console.log(`Радиус: ${random}`);
-console.log(`Площадь: ${area}`);
+console.log(isEven(4)); // true
+console.log(isEven(7)); // false
+console.log(isEven(0)); // true
+console.log(isEven(-2)); // true
+console.log(isEven(-3)); // false
