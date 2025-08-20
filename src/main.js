@@ -1,7 +1,16 @@
-import { isEven } from './numbers.js';
+import { calculateShippingCost } from './numbers.js';
+calculateShippingCost(4.5, 6.67);
+/*
+Чек 1
+  ---------
+Ширина: 4.5 м
+Длина: 6.67 м
+Площадь: 30.015 м^2
+---------
+Нужно оплатить: 31 м^2
+Цена 1 м^2: 350 руб
+Сумма за 31 м^2: 10850 руб
+---------
+Дата расчёта 2025-08-20T10:22:50.227Z
 
-console.log(isEven(4)); // true
-console.log(isEven(7)); // false
-console.log(isEven(0)); // true
-console.log(isEven(-2)); // true
-console.log(isEven(-3)); // false
+ */
