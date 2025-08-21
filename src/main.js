@@ -1,13 +1,4 @@
-import { showSpongeBobCharacter } from './switches.js';
-// Вариант 1: Функция сама выводит в консоль
-showSpongeBobCharacter('spongebob');
+import { areNubersReversed } from './numbers.js';
 
-showSpongeBobCharacter('patrick');
-
-showSpongeBobCharacter('squidward');
-
-showSpongeBobCharacter('plankton');
-
-showSpongeBobCharacter('mr. crabs');
-
-showSpongeBobCharacter('unknown');
+console.log(areNubersReversed(123, 321)); // true
+console.log(areNubersReversed(556, 656)); // false
