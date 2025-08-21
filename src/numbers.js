@@ -1,26 +1,26 @@
-import chalk from 'chalk';
-let callCounter = 0;
-callCounter++;
-export const calculateShippingCost = (width, length) => {
-  const pricePerMeter = 350; //Фиксированная цена за квадратный метр
-  const area = width * length; //Площадь груза (ширина × длина)
-  const metersToPay = Math.ceil(area); // Округление вверх до целых метров (Math.ceil)
-  const totalCost = metersToPay * pricePerMeter; //Итоговая стоимость(metersToPay * 350)
-  const currentDate = new Date().toISOString(); //Текущая дата
+export const areNubersReversed = (a, b) => {
+  //Проверка: являются ли оба числа трехзначными (от 100 до 999 включительно)
+  if (a < 100 || a > 999 || b < 100 || b > 999) {
+    // Если хотя бы одно число не трехзначное - возвращаем null
+    return null;
+  }
 
-  console.log(
-    chalk.green(
-      `Чек ${callCounter}
-  ---------
-Ширина: ${chalk.yellow(width)} м
-Длина: ${chalk.blue(length)} м
-Площадь: ${chalk.magenta(area)} м^2
----------
-Нужно оплатить: ${chalk.cyan(metersToPay)} м^2
-Цена 1 м^2: ${chalk.red(pricePerMeter)} руб
-Сумма за ${metersToPay} м^2: ${chalk.yellow(totalCost)} руб
----------
-Дата расчёта ${chalk.blue(currentDate)}`,
-    ),
-  );
+  //  123 / 100 = 1.23 => Math.floor(1.23) = 1
+  const a1 = Math.floor(a / 100); // первая цифра
+  //(a % 100) / 10 = 23 / 10 = 2.3 => Math.floor(2.3) = 2
+  const a2 = Math.floor((a % 100) / 10); // вторая цифра
+  //a % 10 = остаток от деления на 10 (3 для 123)
+  const a3 = a % 10; // третья цифра
+
+  //321 / 100 = 3.21 => Math.floor(3.21) = 3
+  const b1 = Math.floor(b / 100); // первая цифра
+  //(b % 100) / 10 = 2.1 => Math.floor(2.1) = 2
+  const b2 = Math.floor((b % 100) / 10); // вторая цифра
+  //b % 10 = остаток от деления на 10 (1 для 321)
+  const b3 = b % 10; // третья цифра
+
+  //Первая цифра первого числа должна равняться третьей цифре второго числа
+  //Вторая цифра первого числа должна равняться второй цифре второго числа
+  //Третья цифра первого числа должна равняться первой цифре второго числа
+  return a1 === b3 && a2 === b2 && a3 === b1;
 };
