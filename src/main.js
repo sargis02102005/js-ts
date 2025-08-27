@@ -1,4 +1,3 @@
-import { areNubersReversed } from './numbers.js';
+import { calculateChange } from './numbers.js';
 
-console.log(areNubersReversed(123, 321)); // true
-console.log(areNubersReversed(556, 656)); // false
+calculateChange(128999);
