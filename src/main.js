@@ -1,2 +1,5 @@
-import { diceRoll } from './loops.js';
-console.log(diceRoll());
+import { revert } from './loops.js';
+const text = 'Это просто пример🙉, вы можете вписать абсолютно любую свою строку 😎 :)';
+
+console.log(revert(text)); // ): 😎 укортс юовс юубюл онтюлосба ьтасипв етежом ыв ,🙉ремирп отсорп отЭ
+console.log(revert(text)); // ): 😎 укортс юовс юубюл онтюлосба ьтасипв етежом ыв ,🙉ремирп отсорп отЭ

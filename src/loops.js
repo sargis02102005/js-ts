@@ -1,17 +1,9 @@
-export const diceRoll = () => {
-  let attempts = 0;
-  let dice1 = Math.floor(Math.random() * 6) + 1;
-  let dice2 = Math.floor(Math.random() * 6) + 1;
+export const revert = (str) => {
+  let reversed = '';
 
-  while (dice1 !== dice2) {
-    dice1 = Math.floor(Math.random() * 6) + 1;
-    dice2 = Math.floor(Math.random() * 6) + 1;
-    attempts++;
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
   }
 
-  return {
-    dice1: dice1,
-    dice2: dice2,
-    attempts: attempts,
-  };
+  return reversed;
 };
