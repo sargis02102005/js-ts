@@ -1,22 +1,21 @@
-export const filter = (people) => {
-  // Создаем объект для хранения результатов
-  const result = {
-    mans: [], // Массив для подходящих мужчин
-    women: [], // Массив для подходящих женщин
-  };
+/*
+Напишите функцию, которая удаляет повторения символов из строки, сохраняя порядок.
 
-  // Проходим по каждому человеку в массиве
-  for (const person of people) {
-    //Условия для мужчин: gender = 'm' И age > 18
-    if (person.gender === 'm' && person.age > 18) {
-      result.mans.push(person.name); // Добавляем имя в массив мужчин
-    }
 
-    //Условия для женщин: gender = 'f' И age > 20
-    if (person.gender === 'f' && person.age > 20) {
-      result.women.push(person.name); // Добавляем имя в массив женщин
+
+*/
+// srt:uuunbbeliaaaaveeabbbblllllee // str.length = 28
+export const deduplicate = (str) => {
+  let result = '';
+  let i = 0;
+  //i:0 < str.length:28
+  while (i < str.length) {
+    //str[0] = 'u', str[-1] = undefined
+    if (str[i] === str[i - 1]) {
+      result += str[i];
     }
+    i++;
   }
 
-  return result; // Возвращаем объект с результатами
+  return result;
 };
