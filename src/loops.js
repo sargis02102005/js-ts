@@ -4,14 +4,16 @@
 
 
 */
-// srt:uuunbbeliaaaaveeabbbblllllee // str.length = 28
+// srt:uuunbbeliaaaaveeabbbblllllee
 export const deduplicate = (str) => {
   let result = '';
+  let i = 0;
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== str[i - 1]) {
-      result += str[i];
+  for (const item of str) {
+    if (item !== str[i - 1]) {
+      result += item;
     }
+    i++;
   }
 
   return result;
