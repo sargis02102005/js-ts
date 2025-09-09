@@ -1,16 +1,31 @@
-/*
-Напишите функцию, которая удаляет повторения символов из строки, сохраняя порядок.
+export const roundValues = (numbers) => {
+  const result = [];
+  const positive = [];
 
-
-
-*/
-//srt:uuunbbeliaaaaveeabbbblllllee // str.length = 28
-export const deduplicate = (str) => {
-  let result = '';
-
-  for (const item of str) {
-    if (item !== result[result.length - 1]) {
-      result += item;
+  //Цикл для запуска массива numbers
+  for (const item of numbers) {
+    result.push(item);
+  }
+  //Цикл для на хождение сколько положительных чисел
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] >= 0) {
+      positive.push(i);
+    }
+  }
+  //Цикл для округление каждого положительного числа в нем, кроме последних трех положительных чисел
+  //const countToRound = positive.length - 3;
+  //let roundedCount = 0;
+  //   for (const item of positive) {
+  //     if (roundedCount < countToRound) {
+  //       result[item] = Math.round(numbers[item]);
+  //       roundedCount++;
+  //     }
+  //   }
+  let roundedCount = 0;
+  for (const item of positive) {
+    if (roundedCount <= 3) {
+      result[item] = Math.round(numbers[item]);
+      roundedCount++;
     }
   }
 
