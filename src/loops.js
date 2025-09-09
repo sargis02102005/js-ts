@@ -12,18 +12,10 @@ export const roundValues = (numbers) => {
       positive.push(i);
     }
   }
-  //Цикл для округление каждого положительного числа в нем, кроме последних трех положительных чисел
-  //const countToRound = positive.length - 3;
-  //let roundedCount = 0;
-  //   for (const item of positive) {
-  //     if (roundedCount < countToRound) {
-  //       result[item] = Math.round(numbers[item]);
-  //       roundedCount++;
-  //     }
-  //   }
+
   let roundedCount = 0;
   for (const item of positive) {
-    if (roundedCount <= 3) {
+    if (roundedCount <= positive[positive.length - 5]) {
       result[item] = Math.round(numbers[item]);
       roundedCount++;
     }
