@@ -6,6 +6,6 @@ export const nambers = (a) => {
     console.log(colors[i % 3](i));
   }
 };
-export const getRandomInt = (min = 5, max = 20) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+export const getRandomInt = () => {
+  return Math.floor(Math.random() * 20) + 5;
 };
