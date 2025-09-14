@@ -1,13 +1,15 @@
-import { matrix } from './loops.js';
-const matrixs = [
-  ['#', 'Имя', 'Возраст', 'Особые приметы'],
-  [90, 'Паша', 23],
-  [12, 'Артём', 29],
-  [33, 'Стас', 13, 'Сидит на хлебной диете'],
-  [54, 'Хабиб', 7],
-  [35, 'Алеша', 15, 'Любит ночевать на лавочке'],
-  [50, 'Лена', 19, 'Громко чихает'],
-  [83, 'Катя', 43],
-  [56, 'Алексей', 27, 'Мяукает во сне'],
+import { func } from './loops.js';
+const users = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 25 },
+  { name: 'Diana', age: 35 },
+  { name: 'Eve', age: 30 },
+  { name: 'Frank', age: 28 },
+  { name: 'Grace', age: 25 },
+  { name: 'Hannah', age: 41 },
+  { name: 'Ivy', age: 30 },
+  { name: 'Jack', age: 28 },
 ];
-matrix(matrixs);
+
+func(users);
