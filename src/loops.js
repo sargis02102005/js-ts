@@ -1,11 +1,8 @@
 import chalk from 'chalk';
-export const nambers = (a) => {
-  const colors = [chalk.red, chalk.green, chalk.blue];
-
-  for (let i = 0; i < a; i++) {
-    console.log(colors[i % 3](i));
+export const printColoredObject = (obj) => {
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      console.log(chalk(`${chalk.red(key)}: ${chalk.yellow(obj[key])}`));
+    }
   }
-};
-export const getRandomInt = () => {
-  return Math.floor(Math.random() * 20) + 5;
 };
