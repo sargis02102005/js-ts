@@ -1,15 +1,7 @@
-import { func } from './loops.js';
-const users = [
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 30 },
-  { name: 'Charlie', age: 25 },
-  { name: 'Diana', age: 35 },
-  { name: 'Eve', age: 30 },
-  { name: 'Frank', age: 28 },
-  { name: 'Grace', age: 25 },
-  { name: 'Hannah', age: 41 },
-  { name: 'Ivy', age: 30 },
-  { name: 'Jack', age: 28 },
-];
+import { compareArrays } from './loops.js';
 
-func(users);
+console.log(compareArrays([], [])); // true
+console.log(compareArrays([true, null, 1, 'stop'], [true, null, 1, 'stop'])); // true
+
+console.log(compareArrays([1, 2, 3], [1, 1, 3])); // false
+console.log(compareArrays([null], [])); // false
