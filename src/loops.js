@@ -1,6 +1,6 @@
 export const compareObject = (a, b) => {
   // Если массивы разные по длине -> сразу return false;
-  if (a.length !== b.length) {
+  if (Object.keys(a).length !== Object.keys(b).length) {
     return false;
   }
 
