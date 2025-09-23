@@ -1,14 +1,19 @@
-export const compareObject = (a, b) => {
-  // Если массивы разные по длине -> сразу return false;
-  if (Object.keys(a).length !== Object.keys(b).length) {
-    return false;
-  }
+export const func = (obj) => {
+  let maxLen = 0;
+  let lastValue = '';
 
-  for (const key in a) {
-    if (a[key] !== b[key]) {
-      return false;
+  // for (const key in obj) {
+  //   if (Array.isArray(obj[key]) && obj[key].length > maxLen) {
+  //     maxLen = obj[key].length;
+  //     lastValue = obj[key][obj[key].length - 1];
+  //   }
+  // }
+  for (const key in obj) {
+    const array = obj[key];
+    if (Array.isArray(array) && array.length > maxLen) {
+      maxLen = array.length;
+      lastValue = array[array.length - 1];
     }
   }
-
-  return true;
+  return { maxLen, lastValue };
 };
