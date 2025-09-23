@@ -1,10 +1,20 @@
-import { compareObject } from './loops.js';
+import { func } from './loops.js';
 
-console.log(compareObject({}, {})); // true
-console.log(compareObject({ age: 45 }, { age: 45 })); // true
-console.log(compareObject({ ready: true, photo: null }, { ready: true, photo: null })); // true
-console.log(compareObject({ a: 10, b: 20, c: 30 }, { c: 30, a: 10, b: 20 })); // true
+const user = {
+  example: [1, 2, 3],
+  'X-Address': {
+    street: 'Ленина',
+    house: '10-Б',
+  },
+  data: { length: 50 },
+  nickname: null,
+  permissions: [true, false],
+  age: 101,
+  emails: ['alice@example.com', 'bob@example.com', 'charlie@example.com', 'peter@example.com'],
+  name: 'Peter Charles',
+  isAdult: true,
+  now: new Date().toISOString(),
+};
 
-console.log(compareObject({ name: 'max' }, { name: 'john' })); // false
-console.log(compareObject({ nick: 'maxon' }, {})); // false
-console.log(compareObject({ age: 45, name: 'a' }, { age: 45, name: 'b' })); // false
+const res = func(user); // { maxLen: 4, lastValue: 'peter@example.com' }
+console.log(res);
