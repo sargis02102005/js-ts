@@ -1,20 +1,19 @@
-import { func } from './loops.js';
+import { append } from './loops.js';
+const list = [];
+// Мама
+append(list, 'картошка'); // <--
+append(list, 'укроп');
+append(list, 'молоко');
 
-const user = {
-  example: [1, 2, 3],
-  'X-Address': {
-    street: 'Ленина',
-    house: '10-Б',
-  },
-  data: { length: 50 },
-  nickname: null,
-  permissions: [true, false],
-  age: 101,
-  emails: ['alice@example.com', 'bob@example.com', 'charlie@example.com', 'peter@example.com'],
-  name: 'Peter Charles',
-  isAdult: true,
-  now: new Date().toISOString(),
-};
+// Отец
+append(list, 'мясо');
+append(list, 'картошка'); // <--
+append(list, 'огурцы');
 
-const res = func(user); // { maxLen: 4, lastValue: 'peter@example.com' }
-console.log(res);
+// Дочь
+append(list, 'огурцы');
+append(list, 'картошка'); // <--
+append(list, 'молоко');
+append(list, 'печенья');
+
+console.log(list); // [картошка, укроп, молоко, мясо, огурцы, печенья]
