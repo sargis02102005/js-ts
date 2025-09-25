@@ -1,5 +1,8 @@
-export const append = (src, item) => {
-  if (!src.includes(item)) {
-    src.push(item);
+export const append = (src, items) => {
+  for (const item of src) {
+    if (item === items) {
+      return false;
+    }
   }
+  src.push(items);
 };
