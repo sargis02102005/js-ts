@@ -1,27 +1,22 @@
-const user = { name: 'Коля', age: 9 };
-const diplom = { degree: 'Магистр', university: 'МГУ', department: 'Кафедра информационных технологий' };
+import chalk from 'chalk';
 
-// const mergeToNewObject = (odj1, odj2) => {
-//   return { ...odj1, ...odj2 };
-// };
+const shuffle = (src) => {
+  const result = [];
+  let i = 0;
 
-// const mergeToNewObject = () => {
-//   return { ...user, ...diplom };
-// };
+  while (result.length < src.length) {
+    const randomIndex = Math.floor(Math.random() * src.length);
 
-// const obj3 = mergeToNewObject(user, diplom);
+    const randomElement = src[randomIndex];
+    if (!result.includes(randomElement)) {
+      result.push(randomElement);
+    }
+    i++;
+  }
+  console.log(chalk.red(`Общее количество итераций:`) + chalk.green(i));
+  return result;
+};
 
-const obj3 = { ...user, ...diplom };
+const arr = [5, 8, 1, 3];
 
-console.log(obj3);
-console.log(khkkg);
-/*
-{
-  name: 'Коля',
-  age: 9,
-  degree: 'Магистр',
-  university: 'МГУ',
-  department: 'Кафедра информационных технологий'
-}
- */
-M;
+console.log(shuffle(arr));
