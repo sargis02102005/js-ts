@@ -1,19 +1,11 @@
-import { append } from './loops.js';
-const list = [];
-// Мама
-append(list, 'картошка'); // <--
-append(list, 'укроп');
-append(list, 'молоко');
+const arr = [5, 8, 1, 3];
+const shuffle = (src) => {
+  const j = Math.floor(Math.random() * src.length);
 
-// Отец
-append(list, 'мясо');
-append(list, 'картошка'); // <--
-append(list, 'огурцы');
+  for (let i = 0; i < src.length; i++) {
+    [src[i], src[j]] = [src[j], src[i]];
+  }
+  return src;
+};
 
-// Дочь
-append(list, 'огурцы');
-append(list, 'картошка'); // <--
-append(list, 'молоко');
-append(list, 'печенья');
-
-console.log(list); // [картошка, укроп, молоко, мясо, огурцы, печенья]
+console.log(shuffle(arr));
