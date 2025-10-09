@@ -1,34 +1,15 @@
-/*
-Напишите функцию, которая получает на вход число, а возвращает наибольший делитель (НЦД) для этого числа.
-
-Наибольшим делителем для числа A называется наибольшее число, на которое A делится без остатка, но при этом не само число A (исключение - число 1)
-
-Например:
-
-у 18 наибольшим делителем является число 9
-для числа 21 наибольший делитель - 7
-1 - 1
-10 - 5
-11 - 1
-12 - 6
-21 - 7
-61 - 1
-85 - 17
-123 - 41
-*/
-const ncd = (n) => {
-  for (let i = 2; i <= n; i++) {
-    if (n % i === 0) {
-      return n / i;
-    }
-  }
-};
-
-console.log(ncd(1)); // 1
-console.log(ncd(10)); // 5
-console.log(ncd(11)); // 1
-console.log(ncd(12)); // 6
-console.log(ncd(21)); // 7
-console.log(ncd(61)); // 1
-console.log(ncd(85)); // 17
-console.log(ncd(123)); // 41
+git filter-branch --env-filter '
+OLD_EMAIL="oganyan.sargis20@mail.ru"
+CORRECT_NAME="Sargis"
+CORRECT_EMAIL="sargis.oganyan.04@mail.ru"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+  then
+export GIT_COMMITTER_NAME="$CORRECT_NAME"
+export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+  then
+export GIT_AUTHOR_NAME="$CORRECT_NAME"
+export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags

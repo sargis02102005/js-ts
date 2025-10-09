@@ -3,7 +3,12 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default defineConfig([
-    eslintConfigPrettier,
-    { files: ['**/*.js', '**/*.mjs'] },
-    eslintPluginPrettierRecommended,
+  eslintConfigPrettier,
+  {
+    files: ['**/*.js', '**/*.mjs'],
+    rules: {
+      'prefer-const': 'error',
+    },
+  },
+  eslintPluginPrettierRecommended,
 ]);
